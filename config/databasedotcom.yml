@@ -1,0 +1,6 @@
+host: login.salesforce.com        # Use test.salesforce.com for sandbox
+client_secret: 2566319677555195339         # This is the Consumer Secret from Salesforce
+client_id: 3MVG9rFJvQRVOvk7n8VIanrH1UgxktFRApB8roX75q9hJ9Rs8s7Si7mqvh5XAf.gzKpJG5s_RuuX9V_Agvrcz     # This is the Consumer Key from Salesforce
+debugging: true                   # Can be useful while developing
+username: ganagol@laquiniela.com
+password: laQuiniela#1BfhqZkeFY1cUcfpQLk54fdA2

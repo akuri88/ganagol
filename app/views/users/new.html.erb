@@ -1,0 +1,26 @@
+<%= provide(:title, 'Nuevo Usuario') %>
+<div class="row center hero-unit">
+	<h1>Nuevo Usuario</h1>
+	
+	<div class="span6 offset3">
+		<%= form_for(@user) do |f| %>
+
+			<%= f.label :Name, User__c.label_for("Name") %>
+			<%= f.text_field :Name %>
+			
+			<%= f.label :Username__c, User__c.label_for("Username__c") %>
+			<%= f.text_field :Username__c %>
+
+			<%= f.label :Email__c, User__c.label_for("Email__c") %>
+			<%= f.text_field :Email__c %>
+
+			<%= f.label :password, "Contraseña" %>
+			<%= f.password_field :password %>
+
+			<%= f.label :password_confirmation, "Confirmación" %>
+			<%= f.password_field :password_confirmation %>
+
+			<%= f.submit "Crear Usuario", :class => "btn btn-large btn-primary" %>
+		<% end %>
+	</div>
+</div>
