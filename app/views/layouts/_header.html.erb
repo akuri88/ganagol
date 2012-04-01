@@ -3,10 +3,11 @@
 		<div class="container">
 			<%= link_to "Ganagol", root_path, id: "logo" %>
 			<nav>
+				<% if signed_in? %>
 				<ul class="nav pull-right">
-					<li><%= link_to "Inicio",	root_path %></li>
-					<li><%= link_to "Entrar",	root_path %></li>
+					<li><%= link_to "Cerrar Sesion", signout_path, method: "delete" %></li>
 				</ul>
+				<% end %>
 			</nav>
 		</div>
 	</div>

@@ -22,6 +22,7 @@ class UsersController < ApplicationController
 			salt = make_salt(password)
 			@user.Salt__c = salt
 			@user.Encrypted_Password__c = encrypt(salt, password)
+			@user.Remember_Token__c = SecureRandom.urlsafe_base64
 			@user.OwnerId = '005d0000000yoahAAA'
 			if @user.save
 				flash[:success] = "El usuario ha sido creado con exito!"

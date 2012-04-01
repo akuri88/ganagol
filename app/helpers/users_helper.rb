@@ -6,15 +6,5 @@ module UsersHelper
 		gravatar_url = "http://gravatar.com/avatar/#{gravatar_id}.png"
 		image_tag(gravatar_url, alt: user.Name, class: "gravatar")
 	end
-
-	def has_password?(user, submitted_password)
-		user.Encrypted_Password__c == encrypt_password(submitted_password)
-	end
-	
-	def self.authenticate(username, submitted_password)
-		user = User__c.query("Username__c = '#{username}'")
-		return nil if user.nil?
-		return user if user.has_password?(submitted_password)
-	end
 		
 end
