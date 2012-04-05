@@ -13,4 +13,12 @@ module ApplicationHelper
 	def user__cs_path(format)
 		users_path
 	end
+	
+	def user__c_path(user, format)
+		"#{users_path}/#{user.Id}"
+	end
+	
+	def user__c_path(user)
+		"#{users_path}/#{user.Id}"
+	end
 end

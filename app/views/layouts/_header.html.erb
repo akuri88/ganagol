@@ -5,6 +5,8 @@
 			<nav>
 				<% if signed_in? %>
 				<ul class="nav pull-right">
+					<li><%= link_to "Usuarios", users_path %></li>
+					<li><%= link_to "Perfil", "/users/#{current_user.Id}" %></li>
 					<li><%= link_to "Cerrar Sesion", signout_path, method: "delete" %></li>
 				</ul>
 				<% end %>

@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 		user = User__c.query("Username__c = '#{params[:session][:username]}' LIMIT 1")[0]
 		if user && authenticate(user, params[:session][:password])
 			sign_in user
-			redirect_to "/users/#{user.Id}"
+			redirect_back_or "/users/#{user.Id}"
 		else
 			flash.now[:error] = 'Usuario y/o contrasena incorrectas'
 			render 'new'

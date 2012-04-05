@@ -1,0 +1,31 @@
+<% provide(:title, "Editar ususrio") %> 
+<div class="hero-unit">
+	<h1>Actualiza tu perfil</h1>
+
+	<div class="row">
+		<div class="span6 offset3">
+			<%= form_for(@user) do |f| %>
+
+				<%= f.label :Name, User__c.label_for("Name") %>
+				<%= f.text_field :Name %>
+		
+				<%= f.label :Username__c, User__c.label_for("Username__c") %>
+				<%= f.text_field :Username__c %>
+
+				<%= f.label :Email__c, User__c.label_for("Email__c") %>
+				<%= f.text_field :Email__c %>
+<!--
+				<%= f.label :password, "Contraseña" %>
+				<%= f.password_field :password %>
+
+				<%= f.label :password_confirmation, "Confirmación" %>
+				<%= f.password_field :password_confirmation %>
+-->
+				<%= f.submit "Guardar cambios", :class => "btn btn-large btn-primary" %>
+			<% end %>
+
+			<%= gravatar_for @user %>
+			<a href="http://gravatar.com/emails">change</a>
+		</div>
+	</div>
+</div>

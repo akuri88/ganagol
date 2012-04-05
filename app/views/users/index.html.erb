@@ -1,0 +1,16 @@
+<%= provide(:title, 'Usuarios') %>
+<div class="hero-unit">
+	<h1>Usuarios</h1>
+
+	<ul class="users">
+		<% @users.each do |user| %>
+			<li>
+				<%= gravatar_for user %>
+				<%= link_to user.Name, "/users/#{user.Id}" %>
+				<% if current_user.Admin__c == true && !current_user?(user) %>
+					| <%= link_to "Eliminar", "/users/#{user.Id}", confirm: "Seguro que desea eliminar al usuario #{user.Name}?", method: :delete %>
+				<% end %>
+			</li>
+		<% end %>
+	</ul>
+</div>
